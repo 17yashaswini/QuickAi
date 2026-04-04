@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://quickai-server-qs6h.onrender.com',
+ baseURL: 'https://quickai-server-qs6h.onrender.com/api',
 });
 
 api.interceptors.request.use((config) => {
