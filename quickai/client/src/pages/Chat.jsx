@@ -85,7 +85,7 @@ export default function Chat() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`/api/chat/${chatId}/stream`, {
+      const response = await fetch(`https://quickai-server-qs6h.onrender.com/api/chat/${chatId}/stream`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ message: text, image, persona })
