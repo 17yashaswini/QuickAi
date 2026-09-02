@@ -85,7 +85,7 @@ router.post('/:id/stream', protect, async (req, res) => {
     chat.messages.push({ role: 'user', content: message.trim(), image: image || null });
 
     // Build messages for Groq - use vision model if image present
-    const model = image ? 'llama-3.2-11b-vision-preview' : 'llama-3.3-70b-versatile';
+    const model = image ? 'qwen/qwen3.6-27b' : 'openai/gpt-oss-120b';
 
     const contextMessages = chat.messages.map((m) => {
       if (m.image && m.role === 'user') {
